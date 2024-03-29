@@ -1,0 +1,27 @@
+<html>
+ <head>
+ <script>
+ window.alert("Hello from Kiones Javascript");
+ </script>
+<title>My Yellow Website</title>
+    <style>
+        /* CSS code for setting the background color to pink */
+        body {
+            background-color: yellow;
+        }
+    </style>
+	
+ </head>
+ <body>
+ <h1>Need Asistance with The Groceries today?</h1>
+
+<form
+   action="https://www.google.com/search"
+   target="_blank">
+
+<input type="text" name="q" size="15">
+<input type="submit" value="Search ">
+</form>
+ </body>
+
+</html>
