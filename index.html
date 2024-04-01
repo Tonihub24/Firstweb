@@ -4,7 +4,7 @@
     <script>
         window.alert("Hello from Kiones Javascript");
     </script>
-    <title>My Yellow Website</title>
+    <title>Find Grocery Stores</title>
     <style>
         /* CSS code for setting the background color to pink */
         body {
@@ -13,12 +13,26 @@
     </style>
 </head>
 <body>
-    <h1>Need Assistance with The Groceries today BUSTA ?</h1>
+    <h1>Find Grocery Stores Near You</h1>
 
-    <form action="http://kione.blog/search" method="get" target="_blank">
-        <!-- Replace "yourdomain.com" with your actual domain -->
-        <input type="text" name="q" size="15">
+    <form id="grocery-search-form" action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" id="zip-code" size="50" placeholder="Enter your zip code">
         <input type="submit" value="Search">
     </form>
+
+    <script>
+        // Function to perform search when form is submitted
+        document.getElementById('grocery-search-form').onsubmit = function() {
+            var zipCode = document.getElementById('zip-code').value.trim();
+            if (!zipCode) {
+                alert('Please enter a zip code to search for grocery stores.');
+                return false; // Prevent form submission
+            }
+            
+            // Append search command to the zip code
+            var searchCommand = "grocery stores near ";
+            this.elements['q'].value = zipCode + " " + searchCommand;
+        };
+    </script>
 </body>
 </html>
