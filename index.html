@@ -8,7 +8,15 @@
     <style>
         /* CSS code for setting the background color to pink */
         body {
-            background-color: yellow;
+            background-color: rgb(216, 191, 216);
+        }
+
+        /* Styling for the shopping list header */
+        #shopping-list-header {
+            border: 2px solid black;
+            padding: 5px; /* Adjust padding to control height */
+            margin-bottom: 20px; /* Add more space between the shopping list header and the zip code search bar */
+            width: fit-content; /* Adjust width based on content */
         }
     </style>
 </head>
@@ -20,7 +28,48 @@
         <input type="submit" value="Search">
     </form>
 
+    <!-- Shopping List header enclosed in a box outline -->
+    <div id="shopping-list-header">
+        <h1>Shopping List</h1>
+    </div>
+
+    <!-- Form for entering grocery list items -->
+    <form id="grocery-input-form">
+        <label for="grocery-item">Add item to your grocery list:</label><br>
+        <input type="text" id="grocery-item" name="grocery-item">
+        <input type="button" value="Add" onclick="addItemToList()">
+        <input type="button" value="Delete Last" onclick="deleteLastItem()">
+    </form>
+
+    <!-- Display form for showing the entered grocery items -->
+    <form id="display-form">
+        <h2>Your Grocery List:</h2>
+        <ul id="grocery-list"></ul>
+    </form>
+
     <script>
+        // Function to add item to the grocery list
+        function addItemToList() {
+            var newItem = document.getElementById('grocery-item').value;
+            var groceryList = document.getElementById('grocery-list');
+
+            if (newItem.trim() !== '') {
+                var listItem = document.createElement('li');
+                listItem.textContent = newItem;
+                groceryList.appendChild(listItem);
+                document.getElementById('grocery-input-form').reset(); // Reset the input field
+            }
+        }
+
+        // Function to delete the last item from the grocery list
+        function deleteLastItem() {
+            var groceryList = document.getElementById('grocery-list');
+            var lastItem = groceryList.lastElementChild;
+            if (lastItem) {
+                groceryList.removeChild(lastItem);
+            }
+        }
+
         // Function to perform search when form is submitted
         document.getElementById('grocery-search-form').onsubmit = function() {
             var zipCode = document.getElementById('zip-code').value.trim();
