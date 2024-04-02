@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ePortfolio</title>
+    <style>
+        /* CSS code for setting the background color and font styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        /* CSS code for styling the header */
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        /* CSS code for styling the navigation links */
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #4CAF50;
+        }
+        /* CSS code for styling the main content */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        /* CSS code for styling the sections */
+        section {
+            margin-bottom: 20px;
+        }
+        section h2 {
+            color: #4CAF50;
+        }
+        section p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>My ePortfolio</h1>
+    </header>
+
+    <!-- Navigation section -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#name">Name</a>
+        <a href="#email">Email</a>
+        <a href="#contact">Contact</a>
+        <a href="#major">Major</a>
+    </nav>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Home Page Content -->
+        <section id="home">
+            <h2>Welcome to My ePortfolio</h2>
+            <p>This is my personal ePortfolio showcasing my skills and achievements.</p>
+        </section>
+
+        <!-- Name Section -->
+        <section id="name">
+            <h2>Name</h2>
+            <p>John Doe</p>
+        </section>
+
+        <!-- Email Section -->
+        <section id="email">
+            <h2>Email</h2>
+            <p>john.doe@example.com</p>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>Address: 123 Main Street, City, Country</p>
+            <p>Phone: +1 (123) 456-7890</p>
+        </section>
+
+        <!-- Major Section -->
+        <section id="major">
+            <h2>Major</h2>
+            <p>Computer Information Systems</p>
+        </section>
+    </main>
+</body>
+</html>
