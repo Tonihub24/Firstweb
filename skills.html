@@ -18,6 +18,14 @@
             margin-bottom: 20px; /* Add more space between the shopping list header and the zip code search bar */
             width: fit-content; /* Adjust width based on content */
         }
+
+        /* Styling for the skills section */
+        #skills-section {
+            margin-top: 50px; /* Add space between the shopping list and the skills section */
+            padding: 20px;
+            border: 2px solid black;
+            background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -45,7 +53,27 @@
     <form id="display-form">
         <h2>Your Grocery List:</h2>
         <ul id="grocery-list"></ul>
+        <input type="button" value="Download List" onclick="downloadGroceryList()">
     </form>
+
+    <!-- Skills section -->
+    <div id="skills-section">
+        <h2>Skills and Experiences</h2>
+        <p>
+            Proficient in creating interactive web forms and structuring content with semantic HTML elements.
+            Experienced in incorporating CSS for basic styling and visual enhancements.
+            JavaScript Skills:
+            HTML: 
+            Form Handling: Creating forms for user input using <form> tags.
+            Input Fields: Utilizing <input> tags for text input fields and buttons.
+            Semantic HTML: Proper use of headings (<h1>, <h2>) and lists (<ul>, <li>).
+            Styling: Implementing basic CSS styles to enhance the visual presentation.
+            JavaScript:
+            DOM Manipulation: Dynamically adding and removing HTML elements based on user actions.
+            Event Handling: Defining functions to respond to user interactions such as button clicks and form submissions.
+            File Handling: Generating and downloading a text file using Blob objects and URL.createObjectURL().
+        </p>
+    </div>
 
     <script>
         // Function to add item to the grocery list
@@ -68,6 +96,19 @@
             if (lastItem) {
                 groceryList.removeChild(lastItem);
             }
+        }
+
+        // Function to download grocery list as text file
+        function downloadGroceryList() {
+            var groceryList = document.getElementById('grocery-list').innerText;
+            var blob = new Blob([groceryList], { type: "text/plain" });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'grocery_list.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
 
         // Function to perform search when form is submitted
